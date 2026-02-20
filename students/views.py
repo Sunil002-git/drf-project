@@ -5,4 +5,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 def students(request):
-    return HttpResponse('<h2>Hello World</h2>')
+    students = [
+        {
+            'id' : 205209,
+            'name' : 'Sunil',
+            'Job' : "Web Dev"
+        }
+    ]
+    return HttpResponse(students)
