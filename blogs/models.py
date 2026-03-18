@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Blog(models.Model):
+class Blogs(models.Model):
     blog_title = models.CharField(max_length=100)
     blog_body = models.TextField()
 
@@ -9,8 +9,8 @@ class Blog(models.Model):
         return self.blog_title
     
 
-class Comment(models.Model):
-    blog = models.ForeignKey(Blog , on_delete=models.CASCADE, related_name='comments')
+class Comments(models.Model):
+    blog = models.ForeignKey(Blogs , on_delete=models.CASCADE, related_name='comments')
     comment = models.TextField()
 
     def __str__(self):
